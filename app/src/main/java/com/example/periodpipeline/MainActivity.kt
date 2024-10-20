@@ -18,12 +18,39 @@ class MainActivity : AppCompatActivity(),  OnMapReadyCallback {
         mapFragment.getMapAsync(this)
     }
 
+
+    //add markers of different places on campus near siebel?
+    //potentially change marker size to be smaller
+    //add location feature to access device location
+
     override fun onMapReady(googleMap: GoogleMap) {
-        googleMap.addMarker(
+        googleMap.mapType = GoogleMap.MAP_TYPE_NORMAL
+
+        val illiniUnion = LatLng(40.10990, -88.22699)
+        val graingerEngineering = LatLng(40.11265, -88.22607)
+        val siebelCS = LatLng(40.11398, -88.22495)
+
+        val markerUnion = googleMap.addMarker(
             MarkerOptions()
-                .position(LatLng(0.0, 0.0))
-                .title("Marker")
+                .position(illiniUnion)
+                .title("Illini Union")
         )
+
+        val markerGrainger = googleMap.addMarker(
+            MarkerOptions()
+                .position(graingerEngineering)
+                .title("Grainger Engineering Library")
+        )
+        val markerSiebel = googleMap.addMarker(
+            MarkerOptions()
+                .position(siebelCS)
+                .title("Siebel Center for CS")
+        )
+        googleMap.setOnMarkerClickListener { marker ->
+            marker.showInfoWindow()
+        true
+        }
+
     }
 }
 

@@ -9,6 +9,19 @@
     android:name="com.google.android.gms.maps.SupportMapFragment"
     android:id="@+id/map"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"/>
+    android:layout_height="match_parent"
+        map:cameraBearing="112.5"
+        map:cameraTargetLat="40.110558"
+        map:cameraTargetLng="-88.228333"
+        map:cameraTilt="10"
+        map:cameraZoom="15"
+        map:mapType="normal"
+        map:mapColorScheme="dark"
+        map:uiCompass="false"
+        map:uiRotateGestures="true"
+        map:uiScrollGestures="false"
+        map:uiTiltGestures="true"
+        map:uiZoomControls="true"
+        map:uiZoomGestures="true" />
 
 </RelativeLayout>
